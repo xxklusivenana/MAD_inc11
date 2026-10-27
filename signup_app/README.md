@@ -12,12 +12,13 @@ Github Repo Link: https://github.com/xxklusivenana/signup_app/tree/main/signup_a
 - One example: if AI were allowed to approve signup, it might approve two passwords that don't match, allowing the user to continue with incorrect information.
 
 ## AI Response
-| x | Successful Response | Failure/Offline State |
-| ------------------- | --------------------- |
+| # | Successful Response | Failure/Offline State |
+| - | ------------------- | --------------------- |
 | **input** | ![Successful Signup Input](media/evidence/success_input.png) | X |
 | **after** | ![Successful Signup Tip](media/evidence/success_advice.png) | If the request times out, the server returns a non-200 status, the JSON is invalid, or the tip is empty, the app displays a friendly error message and a Retry option. If no instructor-provided HTTPS proxy URL is configured, the app displays deterministic mock advice labeled Mock signup advice — no live model called. |
 
 ## Request Flow and Privacy Choice
+``` mermaid
 flowchart TD
     A[User taps Get A Signup Tip] --> B[Display loading indicator]
     B --> C{Instructor HTTPS proxy configured?}
@@ -33,6 +34,7 @@ flowchart TD
 
     C -- No --> J[Return deterministic mock tip]
     J --> K[Label as mock advice<br/>No live model called]
+```
 
 **Privacy choice:** The request never includes the user's name, email address, password, or confirm-password value. No provider API keys or real credentials are stored in the app. The AI coach only provides optional advice and does not change form values, approve signup, or replace local validation.
 
