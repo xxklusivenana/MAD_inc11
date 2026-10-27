@@ -35,3 +35,6 @@ flowchart TD
     J --> K[Label as mock advice<br/>No live model called]
 
 **Privacy choice:** The request never includes the user's name, email address, password, or confirm-password value. No provider API keys or real credentials are stored in the app. The AI coach only provides optional advice and does not change form values, approve signup, or replace local validation.
+
+## Exit Quiz
+![Exit Quiz](media/evidence/exit_quiz.png)
