@@ -9,6 +9,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // Themed purple-to-dark gradient for the Haunted Mansion.
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -21,7 +22,8 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('\u{1F987}', style: TextStyle(fontSize: 72)),
-              // Letters appear one by one — typewriter spell
+
+              // Letters appear one by one using a typewriter animation.
               AnimatedTextKit(
                 animatedTexts: [
                   TypewriterAnimatedText(
@@ -36,20 +38,33 @@ class WelcomeScreen extends StatelessWidget {
                 ],
                 totalRepeatCount: 1,
               ),
-              const Text('Sign the guest book… if you dare.',
-                  style: TextStyle(color: Colors.white70)),
+
+              const SizedBox(height: 12),
+
+              const Text(
+                'Sign the guest book… if you dare.',
+                style: TextStyle(color: Colors.white70),
+              ),
+
               const SizedBox(height: 24),
+
+              // Pushes the signup screen onto the navigation stack.
               ElevatedButton(
                 onPressed: () {
-                  // push() = the user can walk back out the front door
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const SignupScreen()),
+                    MaterialPageRoute(
+                      builder: (_) => const SignupScreen(),
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepOrange,
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 32,
+                    vertical: 14,
+                  ),
                 ),
                 child: const Text('Enter If You Dare'),
               ),

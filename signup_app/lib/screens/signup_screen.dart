@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import '/ai_coach.dart';
+import 'success_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -232,49 +232,6 @@ class _SignupScreenState extends State<SignupScreen> {
             child: AiCoach(),
           ),
         ],
-      ),
-    );
-  }
-}
-
-// Potion C: Screen shown after signup finishes.
-class SuccessScreen extends StatelessWidget {
-  final String userName;
-
-  const SuccessScreen({
-    super.key,
-    required this.userName,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Welcome!')),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(
-                Icons.check_circle,
-                color: Colors.green,
-                size: 72,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Welcome, $userName!',
-                style: Theme.of(context).textTheme.headlineSmall,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Your account was created successfully.',
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
