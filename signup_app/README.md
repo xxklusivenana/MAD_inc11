@@ -3,7 +3,7 @@ Janiya Green<br>
 Undergraduate Track<br>
 Github Repo Link: https://github.com/xxklusivenana/MAD_inc11/tree/main/signup_app
 
-## Concept Questions
+## Pumpkin Patch Scenarios 
 1. The Clairvoyant Ghost 
 Imagine a student let an AI write the date-picker, and it shipped lastDate: DateTime(1990). Nobody notices because nobody tested. Design a five-row test table (input → expected → observed) that would have exposed this bug, run it against your picker, and report which rows your current code passes or fails — with screenshots. 
 
